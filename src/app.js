@@ -2,6 +2,7 @@ const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
 
+const usersRoute = require('./routes/users')
 
 const app = express();    
 
@@ -16,3 +17,10 @@ app.use(express.json());
 
 app.listen(app.get('port'));
 console.log("Server on port ", app.get('port'));
+
+app.use('/api/users', usersRoute)
+
+
+
+
+
