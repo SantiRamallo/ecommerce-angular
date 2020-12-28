@@ -16,7 +16,7 @@ CREATE TABLE ecommerce_development.Users (
   role_id TINYINT NOT NULL,
   password TEXT NOT NULL,
   CONSTRAINT User_PK PRIMARY KEY (id),
-  CONSTRAINT User_FK FOREIGN KEY (role_id) REFERENCES ecommerce_development.Roles(id)
+  CONSTRAINT FK_roles_users FOREIGN KEY (role_id) REFERENCES ecommerce_development.Roles(id)
 )
 ENGINE=InnoDB
 DEFAULT CHARSET=utf8mb4
