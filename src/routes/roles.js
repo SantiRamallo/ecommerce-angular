@@ -5,3 +5,6 @@ const rolesController = require('../controllers/rolesController.js');
 
 /* GET home page. */
 router.get('/', rolesController.getRoles);
+
+
+module.exports = router

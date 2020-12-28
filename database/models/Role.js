@@ -29,6 +29,7 @@ module.exports = (sequelize, dataTypes) => {
             as: "users",
             foreignKey: "FK_roles_users"
         })
-        return Role;
+       
     }
+    return Role;
 }
