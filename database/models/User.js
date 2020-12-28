@@ -37,8 +37,8 @@ module.exports = (sequelize, dataTypes) => {
 
     let config = {
         tableName: "users",
-        timestamps: true,
-        underscored: true
+        timestamps: false,
+        underscored: false
     }
 
     const User = sequelize.define(alias, cols, config);
@@ -46,7 +46,7 @@ module.exports = (sequelize, dataTypes) => {
     User.associate = function (models) {
         User.belongsTo(models.Roles, {
             as: "roles",
-            foreignKey: "FK_roles_users"
+            foreignKey: "id"
         })
 
 
