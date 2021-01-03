@@ -17,7 +17,7 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING(200),
             allowNull: false
         },
-        role_id: {
+        roleId: {
             type: dataTypes.INTEGER,
             allowNull: false
         },
@@ -25,11 +25,11 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.TEXT,
             allowNull: false
         },
-        created_at: {
+        createdAt: {
             type: dataTypes.DATE,
             allowNull: false
         },
-        updated_at: {
+        updatedAtt: {
             type: dataTypes.DATE,
             allowNull: false
         }
@@ -37,8 +37,8 @@ module.exports = (sequelize, dataTypes) => {
 
     let config = {
         tableName: "users",
-        timestamps: false,
-        underscored: false
+        timestamps: true,
+        underscored: true
     }
 
     const User = sequelize.define(alias, cols, config);
