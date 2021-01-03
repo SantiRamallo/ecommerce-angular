@@ -3,8 +3,8 @@ var router = express.Router();
 
 const rolesController = require('../controllers/rolesController.js');
 
-/* GET home page. */
+
 router.get('/', rolesController.getRoles);
 
 
-module.exports = router
+module.exports = router;
