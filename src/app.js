@@ -2,10 +2,18 @@ const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
 
+//environment variable
+if(process.env.NODE_ENV !== "production"){
+    require('dotenv').config();
+}
+console.log(`Environment: ${process.env.NODE_ENV}`);
+
+
 const usersRoute = require('./routes/users');
 const rolesRoute = require('./routes/roles');
 
 const app = express();
+
 
 //settings
 app.set('port', process.env.PORT || 3000);
