@@ -10,9 +10,9 @@ module.exports = {
         console.log(req.body);
 
         let newUser = await db.Users.create({
-            username: req.body.name,
+            username: req.body.username,
             email: req.body.email,
-            roleId: req.body.role_id,
+            roleId: req.body.roleId,
             password: req.body.password
         });
         
@@ -20,5 +20,24 @@ module.exports = {
             message: 'Usuario creado exitosamente',
             data: newUser
         });
+    },
+    updateUser: async function (req, res) {
+        console.log(req.params.id);
+        console.log(req.body);
+
+        let updatedUser = await db.Users.update({
+            username: req.body.username,
+            email: req.body.email,
+            roleId: req.body.roleId,
+            password: req.body.password
+        },{
+            where: {
+                id: Number(req.params.id)
+            }
+        })
+        return res.json({
+            message: 'Usuario editado exitosamente',
+            modifiedRows: updatedUser
+        })
     }
 }
