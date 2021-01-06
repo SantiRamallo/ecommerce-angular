@@ -21,6 +21,7 @@ module.exports = {
             data: newUser
         });
     },
+
     updateUser: async function (req, res) {
         console.log(req.params.id);
         console.log(req.body);
@@ -36,8 +37,23 @@ module.exports = {
             }
         })
         return res.json({
-            message: 'Usuario editado exitosamente',
+            message: 'Usuario actualizado exitosamente',
             modifiedRows: updatedUser
+        })
+    },
+
+    deleteUser: async function(req,res) {
+        console.log(req.params.id);
+
+        let deleteUser = await db.Users.destroy({
+            where: {
+                id: req.params.id
+            }
+        })
+
+        return res.json({
+            message: 'Usuario eliminado exitosamente',
+            modifiedRows: deleteUser
         })
     }
 }
